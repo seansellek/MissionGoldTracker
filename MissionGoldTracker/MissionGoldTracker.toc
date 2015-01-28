@@ -5,5 +5,5 @@
 ## SavedVariablesPerCharacter: mgt_totalGold, mgt_beginDate
 ## DefaultState: Enabled
 
-missions.lua
+Missions.lua
 MissionGoldTracker.lua
