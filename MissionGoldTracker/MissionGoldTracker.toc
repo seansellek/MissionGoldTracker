@@ -1,0 +1,9 @@
+## Interface: 60000
+## Title: Mission Gold Tracker
+## Notes: Tracks gold gained by Garrison Missions
+## Version: 1
+## SavedVariablesPerCharacter: mgt_totalGold, mgt_beginDate
+## DefaultState: Enabled
+
+missions.lua
+MissionGoldTracker.lua
