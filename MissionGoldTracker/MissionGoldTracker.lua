@@ -24,5 +24,5 @@ end
 frame:SetScript("OnEvent", frame.OnEvent);
 SLASH_MISSIONGOLDTRACKER1 = "/mgt";
 function SlashCmdList.MISSIONGOLDTRACKER(msg)
- print("You've earned " .. mgt_totalGold.. " copper since " .. mgt_beginDate);
+ print("You've earned " .. GetCoinTextureString(mgt_totalGold) .. " since " .. mgt_beginDate);
 end
