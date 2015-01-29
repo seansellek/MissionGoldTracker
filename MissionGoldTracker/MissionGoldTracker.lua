@@ -13,9 +13,9 @@ function frame:OnEvent(event, arg1, arg2)
    mgt_beginDate = date("%m/%d/%y");
   end
  elseif event == "GARRISON_MISSION_BONUS_ROLL_COMPLETE" and arg2 then
-    for id, reward in pairs(m) do
-        if id == arg1 then
-            mgt_totalGold= mgt_totalGold + reward;
+    for mgt_id, mgt_reward in pairs(mgt_goldMissions) do
+        if mgt_id == arg1 then
+            mgt_totalGold= mgt_totalGold + mgt_reward;
         end
     end
  end
