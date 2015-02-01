@@ -23,20 +23,26 @@ function frame:OnEvent(event, arg1, arg2) --Main Function. Initializes variables
     for mgt_id, mgt_reward in pairs(mgt_goldMissions) do 
         if mgt_id == arg1 then -- Checks if mission completed rewards gold
             mgt_totalGold= mgt_totalGold + mgt_reward; -- Adds mission's gold reward to the total
+			mgt_print();
         end
     end
  end
 end
 
 function goldPerWeek(beginDate, goldEarned) -- Function to calculate income in gold per week
-    local timePassed = time() - time(beginDate); -- Calculates seconds passed since beginDate 
-    local weeksPassed = timePassed*0.0000115741/7; -- converts seconds into days, then weeks
+    local timePassed = time() - time(beginDate);-- Calculates seconds passed since beginDate 
+    local weeksPassed = timePassed*0.0000115741/7; 
+	local weeksPassed = math.ceil(weeksPassed);-- converts seconds into days, then weeks
     local income = goldEarned/weeksPassed; -- Gold/Week
     return GetCoinTextureString(income);
+end
+
+function mgt_print()
+	 print("You've earned " .. GetCoinTextureString(mgt_totalGold) .. " or " .. goldPerWeek(mgt_beginDate,mgt_totalGold) .. " per week on garrison missions ssince " .. date("%m/%d/%y",time(mgt_beginDate)) .. ".");
 end
 
 frame:SetScript("OnEvent", frame.OnEvent); -- Responds to /mgt
 SLASH_MISSIONGOLDTRACKER1 = "/mgt";
 function SlashCmdList.MISSIONGOLDTRACKER(msg)
- print("You've earned " .. GetCoinTextureString(mgt_totalGold) .. " or " .. goldPerWeek(mgt_beginDate,mgt_totalGold) .. " per week on garrison missions ssince " .. date("%m/%d/%y",time(mgt_beginDate)) .. ".");
+	mgt_print();
 end
