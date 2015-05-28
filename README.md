@@ -1,5 +1,5 @@
 # MissionGoldTracker
-Tracks gold earned from garrison missions in World of Warcraft.
+World of Warcraft addon that tracks gold earned from garrison missions in World of Warcraft.
 
 ##Usage
 Enter /mgt to see how much gold you've earned from garrison missions on that character since the addon has been installed.
